@@ -1,6 +1,8 @@
-### API DE BANCO ###
+## API DE BANCO ###
+Essa api tem como funções criar clientes, colaboradores de um banco podendo ser feito saque, depósito, saldo. Usando Python, Django e Pydantic. Testes com Pytest
 
-## Api com 
+
+
 
 
 
