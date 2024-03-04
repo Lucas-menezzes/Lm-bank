@@ -10,8 +10,8 @@ from bank.views.mk_withdraw import mk_withdraw
 
 urlpatterns = [
 
-    path('login_client/', ObtainToken.as_view(), name='client-login' ),
-    path('create_user/', create_user, name='client-login' ),
+    path('authenticator/', ObtainToken.as_view(), name='authenticator' ),
+    path('update_pass/', create_user, name='client-login' ),
     path('get_user/', get, name='get-user' ),
 
     path('list_client/', client_list, name='client-list' ),
