@@ -13,7 +13,6 @@ POST /create_client: Cria o cliente.
 POST /create_colaborator: Cria o colaboradores.
 POST /create_agency: Cria a Agencias.
 POST /mk_deposit: Faz o deposito na conta do cliente
-======
 POST /mk_withdraw: Faz o saque do cliente
 POST /update_pass: Atutaliza a senha do cliente
 POST /authenticator: Faz o Login
