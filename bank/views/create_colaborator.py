@@ -16,13 +16,13 @@ def create_colaborator(request):
         date_birth = datetime.strptime(data['date_birth'], '%Y-%m-%d').date()
 
         if not valid_age(date_birth, 18):
-            return Response({'detail': f"Colaborador deve ser maior de idade."}, status=status.HTTP_400_BAD_REQUEST)
+            return Response({'detail': str.format("Colaborador deve ser maior de idade.")}, status=status.HTTP_400_BAD_REQUEST)
         #CPF existe?
         if document_exist(Colaborators, 'document', data['document']):
-            return Response({'detail': f"Cpf ja cadastrado."}, status=status.HTTP_400_BAD_REQUEST)
+            return Response({'detail': str.format("Cpf ja cadastrado.")}, status=status.HTTP_400_BAD_REQUEST)
         #username Existe?
         if document_exist(Colaborators, 'username', data['username']):
-            return Response({'detail': f"username ja cadastrado."}, status=status.HTTP_400_BAD_REQUEST)
+            return Response({'detail': str.format("username ja cadastrado.")}, status=status.HTTP_400_BAD_REQUEST)
 
         payload = CreateColaborator(**request.data)
         agency = Agency.objects.get(agency_number=payload.agency)
