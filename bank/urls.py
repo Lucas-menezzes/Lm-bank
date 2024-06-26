@@ -14,9 +14,10 @@ urlpatterns = [
     path('update_pass/', create_user, name='client-login' ),
     path('get_user/', get, name='get-user' ),
 
+    path('create_client/', create_client, name='create-client'),
     path('list_client/', client_list, name='client-list' ),
     path('list_client/<int:account>', client_list, name='client-list-account' ),
-    path('create_client/', create_client, name='create-client'),
+
     path('create_agency/', create_agency, name='create-agency'),
     path('list_agency/', agency_list, name='list-agency'),
     path('list_colaborator/', get_colaborator, name='list-colaborator'),

@@ -7,6 +7,7 @@ from ..views.create_agency import create_agency
 from bank.models import Agency, Clients
 from datetime import datetime
 from rest_framework.response import Response
+from django.conf import settings
 
 
 django.setup()

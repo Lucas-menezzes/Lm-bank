@@ -10,7 +10,6 @@ def valid_age(date_birth, age_min):
     age = today.year - date_birth.year - ((today.month, today.day) < (date_birth.month, date_birth.day))
     if age > age_min:
         return True
-    # print(age, age_min, "ERROR: Invalid") 
     
 def document_exist(model_class, field_name, field_value):
     if model_class.objects.filter(**{field_name: field_value}).exists():

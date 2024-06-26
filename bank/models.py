@@ -83,6 +83,11 @@ class Colaborators(CustomUser):
     date_created = models.DateTimeField(auto_now_add=True)
     date_updated = models.DateTimeField(auto_now_add=True)
     nivel = models.CharField(max_length=1, choices=code, default='B')
+    
+    class Meta:
+        permissions = [
+            ("create_client", "Can create client"),
+        ]
 
     def __str__(self):
         return f'{self.name} - {self.get_nivel_display()}'

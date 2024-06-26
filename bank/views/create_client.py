@@ -7,6 +7,7 @@ from ..schemas import CreateClient
 from pydantic import ValidationError
 from datetime import datetime
 from ..validators.utils import valid_age, document_exist
+from django.contrib.auth.decorators import permission_required
 
 
 @api_view(['POST'])
