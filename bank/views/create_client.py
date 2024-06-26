@@ -23,16 +23,16 @@ def create_client(request):
                 return Response({"detail": f"O campo {field} não pode estar vazio."}, status=status.HTTP_400_BAD_REQUEST)
         #valida a idade minima do cliente
         if not valid_age(date_birth, 18):
-            return Response({'detail': f"Cliente deve ser maior de idade."}, status=status.HTTP_400_BAD_REQUEST)
+            return Response({'detail': str.format("Cliente deve ser maior de idade.")}, status=status.HTTP_400_BAD_REQUEST)
         
         if document_exist(Clients, 'document', data['document']):
-            return Response({'detail': f"Cpf ja cadastrado."}, status=status.HTTP_400_BAD_REQUEST)
+            return Response({'detail': str.format("Cpf ja cadastrado.")}, status=status.HTTP_400_BAD_REQUEST)
         #username Existe?
         if document_exist(Clients, 'username', data['username']):
-            return Response({'detail': f"Username ja cadastrado."}, status=status.HTTP_400_BAD_REQUEST)
+            return Response({'detail': str.format("Username ja cadastrado.")}, status=status.HTTP_400_BAD_REQUEST)
 
         if Clients.objects.filter(account=data['account']).exists():
-            return Response({'detail': f"Conta ja cadastrado."}, status=status.HTTP_400_BAD_REQUEST)
+            return Response({'detail': str.format("Conta ja cadastrado.")}, status=status.HTTP_400_BAD_REQUEST)
        
         payload = CreateClient(**request.data)
         agency = Agency.objects.get(agency_number=payload.agency)  # Encontra a agência correspondente ao número fornecido
